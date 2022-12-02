@@ -1,4 +1,4 @@
-package com.example.mvvmexample2.model
+package com.example.mvvmexample2.data.model
 
 
 
