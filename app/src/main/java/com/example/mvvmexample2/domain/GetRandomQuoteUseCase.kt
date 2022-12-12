@@ -2,8 +2,9 @@ package com.example.mvvmexample2.domain
 
 import com.example.mvvmexample2.data.model.QuoteModel
 import com.example.mvvmexample2.data.model.QuoteProvider
+import javax.inject.Inject
 
-class GetRandomQuoteUseCase {
+class GetRandomQuoteUseCase @Inject constructor() {
 
     operator fun invoke(): QuoteModel? {
         val quotes = QuoteProvider.quotes
