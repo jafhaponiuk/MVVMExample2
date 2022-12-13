@@ -15,7 +15,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit():Retrofit{
+    fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://drawsomething-59328-default-rtdb.europe-west1.firebasedatabase.app/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -24,7 +24,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideQuoteApiClient(retrofit: Retrofit):QuoteApiClient{
-
+    fun provideQuoteApiClient(retrofit: Retrofit): QuoteApiClient {
+        return retrofit.create(QuoteApiClient::class.java)
     }
 }
