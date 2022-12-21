@@ -9,7 +9,7 @@ import com.example.mvvmexample2.data.database.entities.QuoteEntity
 @Dao
 interface QuoteDao {
     @Query("SELECT * FROM quote_table ORDER BY author DESC")
-    suspend fun getAllQuqotes(): List<QuoteEntity>
+    suspend fun getAllQuotes(): List<QuoteEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(quotes: List<QuoteEntity>)
