@@ -6,11 +6,6 @@ import com.example.mvvmexample2.domain.model.Quote
 import javax.inject.Inject
 
 class GetQuotesUseCase @Inject constructor(private val repository: QuoteRepository) {
-    // suspend operator fun invoke(): List<QuoteModel>? {
-    //    return repository.getAllQuotes()
-    //}
-
-    // = function in comments
     suspend operator fun invoke(): List<Quote> {
         val quotes = repository.getAllQuotesFromApi()
 
@@ -21,6 +16,5 @@ class GetQuotesUseCase @Inject constructor(private val repository: QuoteReposito
         } else {
             repository.getAllQuotesFromDatabase()
         }
-
     }
 }
